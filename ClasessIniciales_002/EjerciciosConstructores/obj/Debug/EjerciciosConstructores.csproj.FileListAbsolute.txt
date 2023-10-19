@@ -1,0 +1,7 @@
+C:\Users\irwin.cepedas\Documents\GitHub\ProyectoProgram\ClasessIniciales_002\EjerciciosConstructores\bin\Debug\EjerciciosConstructores.exe.config
+C:\Users\irwin.cepedas\Documents\GitHub\ProyectoProgram\ClasessIniciales_002\EjerciciosConstructores\bin\Debug\EjerciciosConstructores.exe
+C:\Users\irwin.cepedas\Documents\GitHub\ProyectoProgram\ClasessIniciales_002\EjerciciosConstructores\bin\Debug\EjerciciosConstructores.pdb
+C:\Users\irwin.cepedas\Documents\GitHub\ProyectoProgram\ClasessIniciales_002\EjerciciosConstructores\obj\Debug\EjerciciosConstructores.csproj.AssemblyReference.cache
+C:\Users\irwin.cepedas\Documents\GitHub\ProyectoProgram\ClasessIniciales_002\EjerciciosConstructores\obj\Debug\EjerciciosConstructores.csproj.CoreCompileInputs.cache
+C:\Users\irwin.cepedas\Documents\GitHub\ProyectoProgram\ClasessIniciales_002\EjerciciosConstructores\obj\Debug\EjerciciosConstructores.exe
+C:\Users\irwin.cepedas\Documents\GitHub\ProyectoProgram\ClasessIniciales_002\EjerciciosConstructores\obj\Debug\EjerciciosConstructores.pdb

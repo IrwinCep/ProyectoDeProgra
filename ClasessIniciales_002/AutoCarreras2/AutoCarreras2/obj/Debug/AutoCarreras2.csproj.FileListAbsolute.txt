@@ -1,0 +1,2 @@
+C:\Users\irwin.cepedas\Documents\GitHub\ProyectoProgram\ClasessIniciales_002\AutoCarreras2\AutoCarreras2\obj\Debug\AutoCarreras2.csproj.AssemblyReference.cache
+C:\Users\irwin.cepedas\Documents\GitHub\ProyectoProgram\ClasessIniciales_002\AutoCarreras2\AutoCarreras2\obj\Debug\AutoCarreras2.csproj.CoreCompileInputs.cache

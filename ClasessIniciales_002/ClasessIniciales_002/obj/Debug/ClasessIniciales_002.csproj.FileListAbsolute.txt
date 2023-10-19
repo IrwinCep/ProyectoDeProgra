@@ -1,0 +1,7 @@
+C:\Users\irwin.cepedas\Documents\GitHub\ProyectoProgram\ClasessIniciales_002\ClasessIniciales_002\bin\Debug\ClasessIniciales_002.exe.config
+C:\Users\irwin.cepedas\Documents\GitHub\ProyectoProgram\ClasessIniciales_002\ClasessIniciales_002\bin\Debug\ClasessIniciales_002.exe
+C:\Users\irwin.cepedas\Documents\GitHub\ProyectoProgram\ClasessIniciales_002\ClasessIniciales_002\bin\Debug\ClasessIniciales_002.pdb
+C:\Users\irwin.cepedas\Documents\GitHub\ProyectoProgram\ClasessIniciales_002\ClasessIniciales_002\obj\Debug\ClasessIniciales_002.csproj.AssemblyReference.cache
+C:\Users\irwin.cepedas\Documents\GitHub\ProyectoProgram\ClasessIniciales_002\ClasessIniciales_002\obj\Debug\ClasessIniciales_002.csproj.CoreCompileInputs.cache
+C:\Users\irwin.cepedas\Documents\GitHub\ProyectoProgram\ClasessIniciales_002\ClasessIniciales_002\obj\Debug\ClasessIniciales_002.exe
+C:\Users\irwin.cepedas\Documents\GitHub\ProyectoProgram\ClasessIniciales_002\ClasessIniciales_002\obj\Debug\ClasessIniciales_002.pdb
