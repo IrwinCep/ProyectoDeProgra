@@ -7,7 +7,7 @@ public class ControladorJugador : MonoBehaviour
     // Start is called before the first frame update
     public float velocidadCaminar = 3f;
     public float fuerzaSalto = 50f;
-    public bool enPiso = false;//Grounded
+    public bool enPiso = false;
     public float saltosMax = 2f;
 
     private Rigidbody2D miCuerpo;
@@ -58,18 +58,25 @@ public class ControladorJugador : MonoBehaviour
 
         if(enPiso)
         {
-            miAnimador.SetBool("Piso", true);
             saltosRest = saltosMax;
+            miAnimador.SetBool("Piso", true);
         }
+        else if (enPiso==false)
+        {
+            miAnimador.SetBool("Piso", false);
+        }
+
         if (Input.GetButtonDown("Jump") && saltosRest > 0)
         {
             saltosRest--;
             miCuerpo.AddForce(new Vector3(0, fuerzaSalto, 0), ForceMode2D.Impulse);
+            miAnimador.SetBool("Piso", false);
         }
+
         miAnimador.SetFloat("Vel_Vert", velActualVert);
-        miAnimador.SetBool("Piso", false);
+        
     }
-    void comprobarPiso()
+    public void comprobarPiso()
     {
         //Lanzo un rayo de deteccion
         //de colisiones hacia abajo
@@ -78,7 +85,6 @@ public class ControladorJugador : MonoBehaviour
         enPiso = Physics2D.Raycast(
             transform.position,//desde donde
             Vector2.down,//hacia abajo
-            0.1f//distancia
-            );
+            0.1f);//distancia
     }
 }
