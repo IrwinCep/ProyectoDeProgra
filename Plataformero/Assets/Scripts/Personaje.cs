@@ -8,11 +8,15 @@ public class Personaje : MonoBehaviour
     public int hpMax = 100;
     public int score = 0;
     public int vidas = 3;
+    public GameObject efectoSangrePrefab;
     Animator miAnimador;
+    private ReproductorSonidos misSonido;
+    
     // Start is called before the first frame update
     void Start()
     {
         miAnimador = GetComponent<Animator>();
+        misSonido = GetComponent<ReproductorSonidos>();
     }
 
     // Update is called once per frame
@@ -24,11 +28,18 @@ public class Personaje : MonoBehaviour
         //resto los puntos al HP actual
         hp = hp - puntos;
         miAnimador.SetTrigger("DAÑAR");
+
+        //Creo una instancia de la part de sangre
+        GameObject sangre = Instantiate(
+            efectoSangrePrefab, transform);
+
+        misSonido.reproducir("DAÑAR");
     }
 
     public void morirAgua(int vidaPerdida, GameObject atacante)
     {
         vidas = vidas - vidaPerdida;
         hp = 0;
+        misSonido.reproducir("MORIR");
     }
 }

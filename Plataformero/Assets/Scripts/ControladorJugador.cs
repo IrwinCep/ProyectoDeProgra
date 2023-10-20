@@ -14,12 +14,14 @@ public class ControladorJugador : MonoBehaviour
     //private SpriteRenderer cavernicola;
     private Animator miAnimador;
     private float saltosRest;
+    private ReproductorSonidos misSonido;
 
     void Start()
     {
         miCuerpo = GetComponent<Rigidbody2D>();
         // cavernicola = GetComponent<SpriteRenderer>();
         miAnimador = GetComponent<Animator>();
+        misSonido = GetComponent<ReproductorSonidos>();
         saltosRest = saltosMax;
     }
 
@@ -71,6 +73,7 @@ public class ControladorJugador : MonoBehaviour
             saltosRest--;
             miCuerpo.AddForce(new Vector3(0, fuerzaSalto, 0), ForceMode2D.Impulse);
             miAnimador.SetBool("Piso", false);
+            misSonido.reproducir("SALTAR");
         }
 
         miAnimador.SetFloat("Vel_Vert", velActualVert);
