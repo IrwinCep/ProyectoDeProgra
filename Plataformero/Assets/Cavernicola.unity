@@ -32773,7 +32773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   efectos:
   - accion: "DA\xD1AR"
-    archivoSonido: {fileID: 8300000, guid: 2856636e1017d024dbcec7f502072fab, type: 3}
+    archivoSonido: {fileID: 8300000, guid: 091b459712f583845b58f875906ea18f, type: 3}
   - accion: SALTAR
     archivoSonido: {fileID: 8300000, guid: a4ec435cdd576b94d976fdb004793752, type: 3}
   - accion: MORIR
