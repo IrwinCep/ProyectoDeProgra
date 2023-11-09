@@ -43,13 +43,13 @@ public class EnemigoPequenio : MonoBehaviour
         { //el heroe esta dentro de la zona de agro
             if(posHeroe.x > posYo.x)
             { //el heroe esta a la derecha
-                transform.rotation = Quaternion.Euler(0, 0, 0);
+                transform.rotation = Quaternion.Euler(0, 180, 0);
                 yoCuerpo.velocity = new Vector3(velHongo, 0, 0);
                 miAnimador.SetBool("CaminHong", true);
             }
             else
             { //el heroe esta a la izquierda
-                transform.rotation = Quaternion.Euler(0, 180, 0);
+                transform.rotation = Quaternion.Euler(0, 0, 0);
                 yoCuerpo.velocity = new Vector3(-velHongo, 0, 0);
                 miAnimador.SetBool("CaminHong", true);
             }
