@@ -76,8 +76,29 @@ public class ControladorJugador : MonoBehaviour
             misSonido.reproducir("SALTAR");
         }
 
+        if(Input.GetButtonDown("Fire1"))
+        {//ataque
+            miAnimador.SetTrigger("Atacar");
+        }
+
         miAnimador.SetFloat("Vel_Vert", velActualVert);
         
+    }
+    private void OnTriggerEnter2D(Collider2D trigger)
+    {
+        print(name + "Toco: "
+            + trigger.gameObject.name);
+
+        GameObject otro = trigger.gameObject;
+        if (otro.tag == "Player")
+        {
+            Personaje elPerso = otro.GetComponent<Personaje>();
+            elPerso.morirAgua(vidaPerdida, this.gameObject);
+            GameObject sumergir = Instantiate(
+            efectoSumergir, elPerso.transform);
+
+            misSonido.reproducir("SUMERGIR");
+        }
     }
     public void comprobarPiso()
     {
