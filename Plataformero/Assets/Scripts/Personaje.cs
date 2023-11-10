@@ -9,6 +9,8 @@ public class Personaje : MonoBehaviour
     public int score = 0;
     public int vidas = 3;
     public GameObject efectoSangrePrefab;
+    public bool aturdido = false;
+    public bool muerto = false;
     Animator miAnimador;
     private ReproductorSonidos misSonido;
     
@@ -19,7 +21,7 @@ public class Personaje : MonoBehaviour
         misSonido = GetComponent<ReproductorSonidos>();
     }
 
-    // Update is called once per frame
+
     public void hacerDanio(int puntos, GameObject atacante)
     {
         print(name + "recibe daño de "
@@ -32,8 +34,21 @@ public class Personaje : MonoBehaviour
         //Creo una instancia de la part de sangre
         GameObject sangre = Instantiate(
             efectoSangrePrefab, transform);
+        if (hp <= 0)
+        {
+            muerto = true;
+            miAnimador.SetTrigger("Muerto");
+        }
 
-        misSonido.reproducir("DAÑAR");
+        aturdido = true;
+        //Programo que se ejecute el metodo
+        //destruir dentro 1 seg
+        Invoke("desaturdir", 1);
+    }
+    private void desaturdir()
+    {
+        aturdido = false;
+
     }
 
     public void morirAgua(int vidaPerdida, GameObject atacante)

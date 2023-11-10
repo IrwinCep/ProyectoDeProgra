@@ -12,6 +12,7 @@ public class EnemigoAtacante : MonoBehaviour
     public int puntosDanio = 35;
     public float distanciaAtaque = 3;
     public GameObject efectoGolpe;
+    private Personaje miPersonaje;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         print(name + "hizo colisión con "
@@ -33,6 +34,7 @@ public class EnemigoAtacante : MonoBehaviour
         heroe = GameObject.FindWithTag("Player");
         yoCuerpo = GetComponent<Rigidbody2D>();
         miAnimador = GetComponent<Animator>();
+        miPersonaje = GetComponent<Personaje>();
     }
 
     // Update is called once per frame
@@ -42,7 +44,7 @@ public class EnemigoAtacante : MonoBehaviour
         Vector3 posYo = this.transform.position;
 
         float distancia = (posYo - posHeroe).magnitude;
-        if (distancia < distanciaAgro && distancia > distanciaAtaque)
+        if (distancia < distanciaAgro && distancia > distanciaAtaque && !miPersonaje.aturdido && !miPersonaje.muerto)
         { //el heroe esta dentro de la zona de agro
             if (posHeroe.x > posYo.x)
             { //el heroe esta a la derecha
@@ -61,7 +63,7 @@ public class EnemigoAtacante : MonoBehaviour
 
 
         }
-        else if(distancia < distanciaAgro && distancia < distanciaAtaque)
+        else if(distancia < distanciaAgro && distancia < distanciaAtaque && !miPersonaje.aturdido && !miPersonaje.muerto)
         {
             if (posHeroe.x > posYo.x)
             { //el heroe esta a la derecha

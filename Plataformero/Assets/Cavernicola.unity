@@ -32715,11 +32715,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9021381667520783174, guid: 8ac80470b002bb4488fd16fe41f22130, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.283613
+      value: -4.05
       objectReference: {fileID: 0}
     - target: {fileID: 9021381667520783174, guid: 8ac80470b002bb4488fd16fe41f22130, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.9762077
+      value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: 9021381667520783174, guid: 8ac80470b002bb4488fd16fe41f22130, type: 3}
       propertyPath: m_LocalPosition.z
@@ -32784,11 +32784,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4732070439660516726, guid: 75b04f98c96e7eb47ae4cbea1e948c13, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -20.55
+      value: -7.1
       objectReference: {fileID: 0}
     - target: {fileID: 4732070439660516726, guid: 75b04f98c96e7eb47ae4cbea1e948c13, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.82
+      value: 0.78
       objectReference: {fileID: 0}
     - target: {fileID: 4732070439660516726, guid: 75b04f98c96e7eb47ae4cbea1e948c13, type: 3}
       propertyPath: m_LocalPosition.z
@@ -33116,6 +33116,8 @@ MonoBehaviour:
   score: 0
   vidas: 3
   efectoSangrePrefab: {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
+  aturdido: 0
+  muerto: 0
 --- !u!114 &1938228416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33251,7 +33253,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1938228414}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.14, y: 0.44, z: 0}
+  m_LocalPosition: {x: -26.58, y: -6.73, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -33283,11 +33285,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 472703217197652973, guid: fc8c4446fa7bfe543970df9d44645e79, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.14
+      value: -26.58
       objectReference: {fileID: 0}
     - target: {fileID: 472703217197652973, guid: fc8c4446fa7bfe543970df9d44645e79, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.44
+      value: -6.73
       objectReference: {fileID: 0}
     - target: {fileID: 472703217197652973, guid: fc8c4446fa7bfe543970df9d44645e79, type: 3}
       propertyPath: m_LocalPosition.z
