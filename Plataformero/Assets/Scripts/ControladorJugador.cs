@@ -9,6 +9,7 @@ public class ControladorJugador : MonoBehaviour
     public float fuerzaSalto = 50f;
     public bool enPiso = false;
     public float saltosMax = 2f;
+    public int dañoHacha = 20;
 
     private Rigidbody2D miCuerpo;
     //private SpriteRenderer cavernicola;
@@ -86,18 +87,12 @@ public class ControladorJugador : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D trigger)
     {
-        print(name + "Toco: "
-            + trigger.gameObject.name);
 
         GameObject otro = trigger.gameObject;
-        if (otro.tag == "Player")
+        if (otro.tag == "Enemy")
         {
             Personaje elPerso = otro.GetComponent<Personaje>();
-            elPerso.morirAgua(vidaPerdida, this.gameObject);
-            GameObject sumergir = Instantiate(
-            efectoSumergir, elPerso.transform);
-
-            misSonido.reproducir("SUMERGIR");
+            elPerso.hacerDanio(dañoHacha, this.gameObject);
         }
     }
     public void comprobarPiso()

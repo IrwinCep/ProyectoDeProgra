@@ -10,6 +10,8 @@ public class EnemigoQuieto : MonoBehaviour
     public float velHongo = 1f;
     private Animator miAnimador;
     public int puntosDanio = 20;
+    public float distanciaPico;
+    public GameObject efectoGolpe;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         print(name + "hizo colisión con "
@@ -23,6 +25,7 @@ public class EnemigoQuieto : MonoBehaviour
             Personaje elPerso = otro.GetComponent<Personaje>();
             //Aplico el daño al otro invocando al metodo hacer daño
             elPerso.hacerDanio(puntosDanio, this.gameObject);
+            GameObject golpe = Instantiate(efectoGolpe, elPerso.transform);
         }
     }
     void Start()
@@ -52,6 +55,7 @@ public class EnemigoQuieto : MonoBehaviour
             { //el heroe esta a la izquierda
                 transform.rotation = Quaternion.Euler(0, 0, 0);
                 yoCuerpo.velocity = new Vector3(-velHongo, 0, 0);
+                miAnimador.SetBool("Picos", true);
             }
 
 
