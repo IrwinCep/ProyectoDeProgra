@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ControladorJugador : MonoBehaviour
 {
@@ -85,9 +87,17 @@ public class ControladorJugador : MonoBehaviour
             miAnimador.SetTrigger("Atacar");
             misSonido.reproducir("Espada");
         }
+        if (miPersonaje.hp <= 0)
+        {
+            Invoke("morirPersonaje", 1.0f);
+        }
 
         miAnimador.SetFloat("Vel_Vert", velActualVert);
         
+    }
+    public void morirPersonaje()
+    {
+        SceneManager.LoadScene(1);
     }
     private void OnTriggerEnter2D(Collider2D trigger)
     {

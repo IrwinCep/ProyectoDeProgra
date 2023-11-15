@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Personaje : MonoBehaviour
 {
     public int hp = 60;
     public int hpMax = 100;
     public int score = 0;
-    public int vidas = 3;
+    public static int vidas = 3;
     public GameObject efectoSangrePrefab;
     public bool aturdido = false;
     public bool muerto = false;
+    public int vidaPerdida = 1;
     Animator miAnimador;
     private ReproductorSonidos misSonido;
     
@@ -39,7 +41,16 @@ public class Personaje : MonoBehaviour
             muerto = true;
             miAnimador.SetTrigger("Muerto");
         }
-
+        if (hp <= 0 && vidas <= 0)
+        {
+            Personaje elPerso = GetComponent<Personaje>();
+            elPerso.morirAgua(vidaPerdida, this.gameObject);
+        }
+        else if (hp <= 0 && vidas > 0)
+        {
+            vidas--;
+            muerto = true;
+        }
         aturdido = true;
         //Programo que se ejecute el metodo
         //destruir dentro 1 seg
@@ -53,8 +64,12 @@ public class Personaje : MonoBehaviour
 
     public void morirAgua(int vidaPerdida, GameObject atacante)
     {
+        print(name + "Muere por " + atacante.name);
         vidas = vidas - vidaPerdida;
         hp = 0;
         misSonido.reproducir("MORIR");
+        miAnimador.SetTrigger("Muerto");
+
+        muerto = true;
     }
 }

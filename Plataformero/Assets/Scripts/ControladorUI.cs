@@ -10,6 +10,7 @@ public class ControladorUI : MonoBehaviour
     public Image barraHPHeroe;
     public Text etiquetaScore;
     public Text etiquetaVidas;
+    public GameObject juegoFin;
 
     void Start()
     {
@@ -26,7 +27,10 @@ public class ControladorUI : MonoBehaviour
         barraHPHeroe.fillAmount = porcentajeHP;
         etiquetaScore.text = "Score: "
             + heroe.score.ToString();
-        etiquetaVidas.text =
-             heroe.vidas.ToString();
+        etiquetaVidas.text = "x" + Personaje.vidas;
+        if (Personaje.vidas <= 0)
+        {
+            juegoFin.SetActive(true);
+        }
     }
 }

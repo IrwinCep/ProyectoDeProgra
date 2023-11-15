@@ -283,6 +283,82 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1280258616191207498, guid: d6dab5480617a7e4ba2c0819307390e6, type: 3}
   m_PrefabInstance: {fileID: 1280258616714573979}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &211646372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 211646375}
+  - component: {fileID: 211646374}
+  - component: {fileID: 211646373}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &211646373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211646372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: fe982f2aca579c443918c3ae462e1082, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &211646374
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211646372}
+  m_CullTransparentMesh: 1
+--- !u!224 &211646375
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211646372}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 771873390}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 20, y: -65}
+  m_SizeDelta: {x: 1024.7999, y: 511.8223}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &252261322
 GameObject:
   m_ObjectHideFlags: 0
@@ -26047,6 +26123,7 @@ RectTransform:
   - {fileID: 992779139}
   - {fileID: 2061333983}
   - {fileID: 415137715}
+  - {fileID: 211646375}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -26072,6 +26149,7 @@ MonoBehaviour:
   barraHPHeroe: {fileID: 681489590}
   etiquetaScore: {fileID: 925346716}
   etiquetaVidas: {fileID: 1210007235}
+  juegoFin: {fileID: 211646372}
 --- !u!1 &786007580
 GameObject:
   m_ObjectHideFlags: 0
@@ -33114,10 +33192,10 @@ MonoBehaviour:
   hp: 60
   hpMax: 100
   score: 0
-  vidas: 3
   efectoSangrePrefab: {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
   aturdido: 0
   muerto: 0
+  vidaPerdida: 1
 --- !u!114 &1938228416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33253,7 +33331,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1938228414}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26.58, y: -6.73, z: 0}
+  m_LocalPosition: {x: -26.73, y: -6.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -33285,11 +33363,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 472703217197652973, guid: fc8c4446fa7bfe543970df9d44645e79, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -26.58
+      value: -26.73
       objectReference: {fileID: 0}
     - target: {fileID: 472703217197652973, guid: fc8c4446fa7bfe543970df9d44645e79, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.73
+      value: -6.8
       objectReference: {fileID: 0}
     - target: {fileID: 472703217197652973, guid: fc8c4446fa7bfe543970df9d44645e79, type: 3}
       propertyPath: m_LocalPosition.z
