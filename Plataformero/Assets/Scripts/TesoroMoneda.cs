@@ -28,7 +28,7 @@ public class TesoroMoneda : MonoBehaviour
         if (otro.tag == "Player")
         {
             miAnimador.SetTrigger("Desaparece");
-            heroe.score = 10;
+            heroe.score++;
             monedas++;
             GetComponent<Collider2D>().enabled = false;
             Destroy(gameObject, 3);

@@ -8,6 +8,7 @@ public class Veneno : MonoBehaviour
     public int danioHecho = 5;
     public float danioRep = 2f;
     private Animator miAnimador;
+    private Personaje victima;
 
     void Start()
     {
@@ -23,9 +24,16 @@ public class Veneno : MonoBehaviour
         {
             InvokeRepeating("DanioConstante", 0f, danioRep);
             GetComponent<Collider2D>().enabled = false;
-            Destroy(gameObject, 6f);
+            Destroy(this.gameObject, 6f);
             miAnimador.SetTrigger("Envenenado");
         }
+    }
+    private void envenenar()
+    {
+        victima.hacerDanio(
+            danioHecho,
+            this.gameObject,
+            Personaje.TipoDanio.Magico);
     }
 
     void DanioConstante()

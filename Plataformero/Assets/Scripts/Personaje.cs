@@ -5,11 +5,21 @@ using System;
 
 public class Personaje : MonoBehaviour
 {
+    public enum TipoDanio
+    {
+        Fisico,
+        Magico,
+        Fuego,
+        Aire,
+        Contundente,
+        Cortante,
+    }
     public int hp = 60;
     public int hpMax = 100;
     public int score = 0;
     public static int vidas = 3;
     public GameObject efectoSangrePrefab;
+    public GameObject efectoDanioMagicoPrefab;
     public bool aturdido = false;
     public bool muerto = false;
     public int vidaPerdida = 1;
@@ -24,10 +34,13 @@ public class Personaje : MonoBehaviour
     }
 
 
-    public void hacerDanio(int puntos, GameObject atacante)
+    public void hacerDanio(
+        int puntos, 
+        GameObject atacante,
+        TipoDanio tipo = TipoDanio.Fisico)
     {
         print(name + "recibe daño de "
-            + puntos + " por " + atacante.name);
+            + puntos + " por " + atacante.name + TipoDanio.Fisico);
 
         //resto los puntos al HP actual
         hp = hp - puntos;
@@ -37,6 +50,15 @@ public class Personaje : MonoBehaviour
         //Creo una instancia de la part de sangre
         GameObject sangre = Instantiate(
             efectoSangrePrefab, transform);
+        if (tipo == TipoDanio.Fisico)
+        {
+            aturdido = true;
+            Invoke("desaturdir", 1);
+        }
+        else if (tipo == TipoDanio.Magico)
+        {
+            Instantiate(efectoDanioMagicoPrefab, transform);
+        }
         if (hp <= 0)
         {
             muerto = true;
