@@ -5,32 +5,34 @@ using UnityEngine;
 public class TesoroMoneda : MonoBehaviour
 {
     private Animator miAnimador;
-    public int vMoneda = 10;
+    public float monedas = 0;
+    public Personaje heroe;
+    private ReproductorSonidos misSonido;
     // Start is called before the first frame update
     void Start()
     {
         miAnimador = GetComponent<Animator>();
+        misSonido = GetComponent<ReproductorSonidos>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D agarrar)
     {
-        print(name + "hizo colisión con "
-            + other.gameObject.name);
-
-        GameObject otro = other.gameObject;
+        TesoroMoneda moneda = GetComponent<TesoroMoneda>();
+        print(name + "hizo colision con" + agarrar.gameObject.name);
+        GameObject otro = agarrar.gameObject;
         if (otro.tag == "Player")
         {
-            Personaje elPerso = otro.GetComponent<Personaje>();
-            elPerso.score = elPerso.score + vMoneda;
             miAnimador.SetTrigger("Desaparece");
+            heroe.score = 10;
+            monedas++;
             GetComponent<Collider2D>().enabled = false;
-            Destroy(gameObject, 1.5f);
+            Destroy(gameObject, 3);
+            misSonido.reproducir("Agarrar");
         }
     }
 }

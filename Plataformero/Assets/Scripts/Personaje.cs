@@ -32,6 +32,7 @@ public class Personaje : MonoBehaviour
         //resto los puntos al HP actual
         hp = hp - puntos;
         miAnimador.SetTrigger("DAÑAR");
+        misSonido.reproducir("DAÑAR");
 
         //Creo una instancia de la part de sangre
         GameObject sangre = Instantiate(
