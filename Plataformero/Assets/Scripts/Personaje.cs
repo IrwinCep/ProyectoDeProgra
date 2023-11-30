@@ -95,4 +95,6 @@ public class Personaje : MonoBehaviour
 
         muerto = true;
     }
+
+
 }

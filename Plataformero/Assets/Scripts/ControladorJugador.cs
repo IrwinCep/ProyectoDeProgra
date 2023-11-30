@@ -19,6 +19,7 @@ public class ControladorJugador : MonoBehaviour
     private float saltosRest;
     private ReproductorSonidos misSonido;
     private Personaje miPersonaje;
+    private GameController gameController;
 
 
     void Start()
@@ -89,7 +90,7 @@ public class ControladorJugador : MonoBehaviour
         }
         if (miPersonaje.hp <= 0)
         {
-            Invoke("morirPersonaje", 1.0f);
+            Invoke("morirPersonaje", 3f);
         }
 
         miAnimador.SetFloat("Vel_Vert", velActualVert);

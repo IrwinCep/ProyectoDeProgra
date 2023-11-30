@@ -4,20 +4,24 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    Vector2 checkPointPos;
+    public static float x;
+    public static float y;
     // Start is called before the first frame update
     void Start()
     {
-        checkPointPos = transform.position;
+        if (x != 0)
+        {
+            GameObject elPerso = GameObject.FindGameObjectWithTag("Player");
+            elPerso.transform.position = new Vector2(x, y);
+
+        }
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    public void UpdateCheckpoint(Vector2 pos)
-    {
-        checkPointPos = pos);
+
     }
 }
