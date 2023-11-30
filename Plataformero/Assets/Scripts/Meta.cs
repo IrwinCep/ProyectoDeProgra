@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Meta : MonoBehaviour
 {
-    public GameObject cavernicola;
+    public GameObject celebrationPrefab;
     private ReproductorSonidos misSonidos;
-    public GameObject metaPrefab;
     private Animator miAnimador;
-
 
     void Start()
     {
@@ -16,21 +15,17 @@ public class Meta : MonoBehaviour
         miAnimador = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        GameObject otroObjeto = collision.gameObject;
-        if (otroObjeto.tag == "Player")
+        GameObject otro = col.gameObject;
+        if (otro.tag == "Player")
         {
-            Personaje elPerso = otroObjeto.GetComponent<Personaje>(); 
-            misSonidos.reproducir("Celebracion");
-
-            GameObject celebracion = Instantiate(metaPrefab);
+            misSonidos.reproducir("CELEBRATION");
+            GameObject celebracion = Instantiate(celebrationPrefab);
             celebracion.transform.position = this.transform.position;
+            Personaje elPerso = otro.GetComponent<Personaje>();
+            elPerso.celebrar(this.gameObject);
         }
     }
+
 }

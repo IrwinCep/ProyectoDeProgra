@@ -95,6 +95,11 @@ public class Personaje : MonoBehaviour
 
         muerto = true;
     }
+    public void celebrar(GameObject atacante)
+    {
+        miAnimador.SetTrigger("Celebracion");
+        muerto = true;
+    }
 
 
 }
